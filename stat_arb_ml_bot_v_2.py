@@ -1052,9 +1052,9 @@ class StatArbMLBot:
                 print("Stopped by user")
                 break
             except Exception as e:
-                err = f"[ERROR] {utc_now_str()}
+                err = f"""[ERROR] {utc_now_str()}
 {type(e).__name__}: {e}
-{traceback.format_exc()}"
+{traceback.format_exc()}"""
                 print(err)
                 send_telegram(err[:3500])
             time.sleep(CONFIG["poll_seconds"])
